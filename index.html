@@ -75,6 +75,7 @@
       <ul class="nav__menu" id="navMenu">
         <li><a class="nav__link" href="#about">About</a></li>
         <li><a class="nav__link" href="#skills">Skills</a></li>
+        <li><a class="nav__link" href="#ai">AI Workflow</a></li>
         <li><a class="nav__link" href="#projects">Projects</a></li>
         <li><a class="nav__link" href="#experience">Experience</a></li>
         <li><a class="nav__link" href="#education">Education</a></li>
@@ -108,6 +109,8 @@
           <h1 class="hero__name" id="hero-name">Sigit Kurniawan</h1>
           <p class="hero__headline">Web Developer — <span class="accent">Laravel · PHP · MySQL</span></p>
           <p class="hero__tagline">I build clean, reliable web applications — turning ideas into maintainable, real-world software.</p>
+
+          <p class="hero__badge"><span class="hero__badge-spark" aria-hidden="true">✦</span> AI-Augmented Workflow</p>
 
           <p class="hero__subline mono">
             Cumlaude Graduate (GPA 3.88) · Top Graduate, Informatics Engineering · Bangkit Academy Alumni
@@ -156,6 +159,8 @@
             <p class="terminal__out">→ Web Developer focused on the Laravel/PHP ecosystem</p>
             <p><span class="terminal__prompt">sigit@portfolio:~$</span> status</p>
             <p class="terminal__out">→ Open to work · based in Riau, Indonesia</p>
+            <p><span class="terminal__prompt">sigit@portfolio:~$</span> workflow</p>
+            <p class="terminal__out">→ AI-augmented development · human-reviewed, tested, shipped</p>
             <p><span class="terminal__prompt">sigit@portfolio:~$</span> <span class="terminal__cursor">█</span></p>
           </div>
         </div>
@@ -201,7 +206,9 @@
           (GPA 3.88) from Bengkalis State Polytechnic, where I was recognized as the top student in the
           Informatics Engineering department. I enjoy building impactful software with strong
           problem-solving and clean, maintainable code. Beyond the web, I've also explored Android
-          development through Google's Bangkit Academy. I'm now looking to grow within a professional
+          development through Google's Bangkit Academy. I also work as an AI-augmented developer —
+          leveraging AI tools to research, prototype, and review, while keeping every quality and
+          architecture decision my own. I'm now looking to grow within a professional
           engineering team — on-site in Riau or remotely.
         </p>
       </div>
@@ -253,11 +260,105 @@
     </section>
 
     <!-- ============================================================= -->
+    <!-- HOW I WORK WITH AI                                            -->
+    <!-- ============================================================= -->
+    <section class="section section--ai" id="ai" aria-labelledby="ai-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 03 — ai workflow</p>
+        <h2 class="section__title reveal" id="ai-title">
+          <span class="spark" aria-hidden="true">✦</span> How I Work with AI
+        </h2>
+        <p class="ai-intro reveal">
+          I treat AI as a force multiplier, not a crutch. I use modern AI tools to move faster on
+          research, prototyping, and review — while architecture, correctness, and final quality
+          always stay in my hands.
+        </p>
+
+        <div class="ai__grid">
+          <article class="card card--ai reveal">
+            <p class="card__kicker mono"><span class="spark" aria-hidden="true">✦</span> 01</p>
+            <h3 class="card__title">Prototype &amp; Scaffold</h3>
+            <p class="card__desc">
+              Rapidly draft boilerplate and explore approaches, then refine and harden the code by hand.
+            </p>
+          </article>
+
+          <article class="card card--ai reveal">
+            <p class="card__kicker mono"><span class="spark" aria-hidden="true">✦</span> 02</p>
+            <h3 class="card__title">Debug &amp; Review</h3>
+            <p class="card__desc">
+              Use AI as a second pair of eyes to surface issues faster — every suggestion is verified,
+              not trusted blindly.
+            </p>
+          </article>
+
+          <article class="card card--ai reveal">
+            <p class="card__kicker mono"><span class="spark" aria-hidden="true">✦</span> 03</p>
+            <h3 class="card__title">Research &amp; Learn</h3>
+            <p class="card__desc">
+              Accelerate understanding of new frameworks, docs, and patterns to ship with confidence.
+            </p>
+          </article>
+
+          <article class="card card--ai reveal">
+            <p class="card__kicker mono"><span class="spark" aria-hidden="true">✦</span> 04</p>
+            <h3 class="card__title">Document &amp; Refactor</h3>
+            <p class="card__desc">
+              Speed up documentation and cleanup so the codebase stays readable and maintainable.
+            </p>
+          </article>
+        </div>
+
+        <div class="ai-principles mono reveal" role="note" aria-label="Working principles">
+          <p>// Every AI-assisted line is read, understood, and tested before it ships.</p>
+          <p>// AI accelerates the work — I stay accountable for it.</p>
+        </div>
+
+        <!-- AI toolbelt -->
+        <div class="ai-toolbelt reveal">
+          <p class="ai-toolbelt__label mono">AI tools I work with</p>
+          <ul class="ai-toolbelt__list">
+            <!-- TODO (Sigit): keep only the tools you genuinely use; add/remove items here.
+                 Logos load from simple-icons CDN; the visible label is the source of truth. -->
+            <li class="ai-badge">
+              <img class="ai-badge__logo" src="https://cdn.simpleicons.org/claude/22d3ee" alt="" width="16" height="16" loading="lazy" />
+              <span>Claude</span>
+            </li>
+            <li class="ai-badge">
+              <img class="ai-badge__logo" src="https://cdn.simpleicons.org/googlegemini/22d3ee" alt="" width="16" height="16" loading="lazy" />
+              <span>Gemini</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Static ⌘K-style illustration. Pre-scripted, no live AI, no network calls. -->
+        <figure class="cmdk reveal" aria-labelledby="cmdk-cap">
+          <div class="cmdk__bar">
+            <span class="cmdk__key mono">⌘K</span>
+            <div class="cmdk__input mono">
+              <span class="cmdk__chevron" aria-hidden="true">&rsaquo;</span>
+              <span class="cmdk__typed" id="cmdkTyped" aria-hidden="true"></span><span class="cmdk__caret" aria-hidden="true">▋</span>
+            </div>
+          </div>
+          <ul class="cmdk__list mono">
+            <li><span class="cmdk__hint" aria-hidden="true">↳</span> Scaffold a Laravel resource controller for invoices</li>
+            <li><span class="cmdk__hint" aria-hidden="true">↳</span> Explain the foreign keys in this migration</li>
+            <li><span class="cmdk__hint" aria-hidden="true">↳</span> Write PHPUnit tests for InvoiceService</li>
+            <li><span class="cmdk__hint" aria-hidden="true">↳</span> Review this query for N+1 problems</li>
+          </ul>
+          <figcaption class="cmdk__cap mono" id="cmdk-cap">
+            Illustration of my prompting style — pre-scripted &amp; static, not a live assistant.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
     <!-- PROJECTS                                                      -->
     <!-- ============================================================= -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
-        <p class="section__kicker mono reveal">// 03 — projects</p>
+        <p class="section__kicker mono reveal">// 04 — projects</p>
         <h2 class="section__title reveal" id="projects-title">Projects</h2>
 
         <div class="projects__grid">
@@ -351,7 +452,7 @@
     <!-- ============================================================= -->
     <section class="section" id="experience" aria-labelledby="experience-title">
       <div class="container">
-        <p class="section__kicker mono reveal">// 04 — experience</p>
+        <p class="section__kicker mono reveal">// 05 — experience</p>
         <h2 class="section__title reveal" id="experience-title">Experience</h2>
 
         <ol class="timeline">
@@ -414,7 +515,7 @@
     <!-- ============================================================= -->
     <section class="section" id="education" aria-labelledby="education-title">
       <div class="container">
-        <p class="section__kicker mono reveal">// 05 — education</p>
+        <p class="section__kicker mono reveal">// 06 — education</p>
         <h2 class="section__title reveal" id="education-title">Education</h2>
 
         <div class="edu reveal">
@@ -436,7 +537,7 @@
     <!-- ============================================================= -->
     <section class="section" id="certs" aria-labelledby="certs-title">
       <div class="container">
-        <p class="section__kicker mono reveal">// 06 — certifications &amp; awards</p>
+        <p class="section__kicker mono reveal">// 07 — certifications &amp; awards</p>
         <h2 class="section__title reveal" id="certs-title">Certifications &amp; Awards</h2>
 
         <ul class="awards">
@@ -484,7 +585,7 @@
     <!-- ============================================================= -->
     <section class="section section--contact" id="contact" aria-labelledby="contact-title">
       <div class="container">
-        <p class="section__kicker mono reveal">// 07 — contact</p>
+        <p class="section__kicker mono reveal">// 08 — contact</p>
         <h2 class="section__title reveal" id="contact-title">Let's build something</h2>
         <p class="contact__lead reveal">
           Open to junior web developer roles and freelance projects. Let's build something.

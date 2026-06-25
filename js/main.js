@@ -161,4 +161,51 @@
     );
     revealEls.forEach(function (el) { revealObs.observe(el); });
   }
+
+  /* ---------------------------------------------------------------
+     5. ⌘K ILLUSTRATION — pre-scripted typing loop.
+        Purely decorative & static: no API, no live AI. The phrases
+        below are fixed. If the user prefers reduced motion, we show
+        one representative phrase and skip the animation entirely.
+     --------------------------------------------------------------- */
+  var typedEl = document.getElementById('cmdkTyped');
+  if (typedEl) {
+    var phrases = [
+      'Scaffold a Laravel resource controller for invoices',
+      'Explain the foreign keys in this migration',
+      'Write PHPUnit tests for InvoiceService',
+      'Review this query for N+1 problems'
+    ];
+
+    if (prefersReducedMotion) {
+      typedEl.textContent = phrases[0];
+    } else {
+      var pi = 0;        // phrase index
+      var ci = 0;        // char index
+      var deleting = false;
+
+      var tick = function () {
+        var current = phrases[pi];
+        if (!deleting) {
+          ci++;
+          typedEl.textContent = current.slice(0, ci);
+          if (ci === current.length) {
+            deleting = true;
+            return setTimeout(tick, 1600); // hold full phrase
+          }
+          setTimeout(tick, 42 + Math.random() * 38);
+        } else {
+          ci--;
+          typedEl.textContent = current.slice(0, ci);
+          if (ci === 0) {
+            deleting = false;
+            pi = (pi + 1) % phrases.length;
+            return setTimeout(tick, 350);
+          }
+          setTimeout(tick, 22);
+        }
+      };
+      setTimeout(tick, 700);
+    }
+  }
 })();

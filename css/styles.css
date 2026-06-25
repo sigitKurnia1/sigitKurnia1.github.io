@@ -403,6 +403,164 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 /* ----------------------------------------------------------------
+   9b. AI WORKFLOW  (hero badge, "How I Work with AI" section)
+   ---------------------------------------------------------------- */
+
+/* Sparkle accent marker — used in hero badge and AI section titles */
+.spark { color: var(--accent); }
+
+/* Hero badge near the tagline */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 14px 0 0;
+  padding: 5px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.4px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  border-radius: 999px;
+}
+.hero__badge-spark { font-size: 0.9em; line-height: 1; }
+
+/* Section title sparkle sits just before the heading text */
+.section__title .spark { margin-right: 6px; font-size: 0.9em; }
+
+/* Intro line */
+.ai-intro {
+  font-size: 1.08rem;
+  max-width: 68ch;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+/* Use-case cards grid (reuses .card; adds a subtle accent glow) */
+.ai__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 26px;
+}
+.card--ai {
+  position: relative;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+    var(--surface);
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--border));
+}
+.card--ai:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+.card__kicker {
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Opinionated principles block (monospace / quote style) */
+.ai-principles {
+  border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 16px 20px;
+  margin-bottom: 30px;
+}
+.ai-principles p {
+  margin: 0 0 6px;
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+.ai-principles p:last-child { margin-bottom: 0; }
+
+/* AI toolbelt */
+.ai-toolbelt { margin-bottom: 30px; }
+.ai-toolbelt__label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.ai-toolbelt__list { display: flex; flex-wrap: wrap; gap: 10px; }
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.ai-badge:hover { border-color: var(--accent); transform: translateY(-2px); }
+.ai-badge__logo { width: 16px; height: 16px; display: block; }
+
+/* ⌘K command-palette illustration (static, pre-scripted) */
+.cmdk {
+  margin: 0;
+  max-width: 560px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.cmdk__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.cmdk__key {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.cmdk__input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text);
+  min-width: 0;
+}
+.cmdk__chevron { color: var(--accent); }
+.cmdk__typed { white-space: nowrap; overflow: hidden; }
+.cmdk__caret { color: var(--accent); animation: blink 1.1s steps(1) infinite; }
+.cmdk__list { padding: 10px 16px 6px; }
+.cmdk__list li {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.cmdk__hint { color: var(--accent); flex-shrink: 0; }
+.cmdk__cap {
+  padding: 10px 16px 14px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+}
+
+/* ----------------------------------------------------------------
    10. PROJECTS
    ---------------------------------------------------------------- */
 .projects__grid {
@@ -578,6 +736,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .skills__grid { grid-template-columns: 1fr; }
   .projects__grid { grid-template-columns: 1fr 1fr; }
+  .ai__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -637,6 +796,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .section { padding: 64px 0; }
   .stats__grid { grid-template-columns: 1fr 1fr; }
   .projects__grid { grid-template-columns: 1fr; }
+  .ai__grid { grid-template-columns: 1fr; }
   .hero__cta .btn { flex: 1 1 auto; text-align: center; }
 }
 
@@ -652,4 +812,5 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   }
   .reveal { opacity: 1; transform: none; }
   .terminal__cursor { animation: none; }
+  .cmdk__caret { animation: none; }
 }
