@@ -1,348 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Sigit Kurniawan Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
-      rel="stylesheet"
-      type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
-      rel="stylesheet"
-      type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
-  <body id="page-top">
-    <!-- Navigation-->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
-      id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Sigit Kurniawan</span>
-        <span class="d-none d-lg-block"
-          ><img
-            class="img-fluid img-profile rounded-circle mx-auto mb-2"
-            src="assets/img/profile_pic.png"
-            alt="..."
-        /></span>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO META ============ -->
+  <title>Sigit Kurniawan — Web Developer (Laravel · PHP · MySQL)</title>
+  <meta name="description" content="Sigit Kurniawan — Web Developer focused on the Laravel/PHP ecosystem. Cumlaude graduate (GPA 3.88) and top graduate in Informatics Engineering. Open to work: on-site, hybrid, or remote." />
+  <meta name="author" content="Sigit Kurniawan" />
+
+  <!-- ============ OPEN GRAPH / SOCIAL SHARE ============ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sigit Kurniawan — Web Developer (Laravel · PHP · MySQL)" />
+  <meta property="og:description" content="I build clean, reliable web applications — turning ideas into maintainable, real-world software." />
+  <!-- TODO: replace with an absolute URL to a 1200x630 share image once deployed, e.g. https://username.github.io/assets/og-image.png -->
+  <meta property="og:image" content="assets/og-image.png" />
+  <!-- TODO: replace with your live site URL once deployed -->
+  <meta property="og:url" content="https://sigitkurnia1.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sigit Kurniawan — Web Developer" />
+  <meta name="twitter:description" content="I build clean, reliable web applications — turning ideas into maintainable, real-world software." />
+  <meta name="twitter:image" content="assets/og-image.png" />
+
+  <!-- ============ FAVICON ============ -->
+  <!-- TODO: drop a real favicon.ico / favicon.svg into /assets. An inline SVG fallback is provided below. -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+
+  <!-- ============ THEME COLOR (mobile browser chrome) ============ -->
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+
+  <!-- ============ FONTS (Google Fonts) ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ============ STYLES ============ -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Set theme as early as possible to avoid flash of wrong theme (FOUC).
+       This is the ONLY inline script and it runs before paint. -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* localStorage may be unavailable; default theme stays */ }
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================= -->
+  <!-- HEADER / NAVBAR                                                -->
+  <!-- ============================================================= -->
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#top" aria-label="Sigit Kurniawan — home">
+        <span class="nav__brand-bracket">&lt;</span>SK<span class="nav__brand-bracket">/&gt;</span>
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#skills">Skills</a></li>
+        <li><a class="nav__link" href="#projects">Projects</a></li>
+        <li><a class="nav__link" href="#experience">Experience</a></li>
+        <li><a class="nav__link" href="#education">Education</a></li>
+        <li><a class="nav__link" href="#certs">Awards</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+        <li class="nav__theme-li">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+            <!-- Sun / moon swapped via CSS based on data-theme -->
+            <svg class="icon icon--sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <svg class="icon icon--moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================= -->
+    <!-- HERO                                                          -->
+    <!-- ============================================================= -->
+    <section class="hero" id="hero" aria-labelledby="hero-name">
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <p class="hero__eyebrow mono">// web developer</p>
+          <h1 class="hero__name" id="hero-name">Sigit Kurniawan</h1>
+          <p class="hero__headline">Web Developer — <span class="accent">Laravel · PHP · MySQL</span></p>
+          <p class="hero__tagline">I build clean, reliable web applications — turning ideas into maintainable, real-world software.</p>
+
+          <p class="hero__subline mono">
+            Cumlaude Graduate (GPA 3.88) · Top Graduate, Informatics Engineering · Bangkit Academy Alumni
+          </p>
+          <p class="hero__location mono">
+            <span aria-hidden="true">📍</span> Bengkalis, Riau, Indonesia ·
+            <span class="hero__status">Open to Work — On-site / Hybrid / Remote</span>
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <!-- TODO: place your real resume at assets/resume.pdf -->
+            <a class="btn btn--ghost" href="assets/resume.pdf" download>Download Resume</a>
+            <a class="btn btn--ghost" href="#contact">Contact</a>
+          </div>
+
+          <ul class="hero__social" aria-label="Social links">
+            <li>
+              <a href="mailto:sigitkurniawan1052@gmail.com" aria-label="Email Sigit" class="social-link">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/sigit-kurniawan-a85108272/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="social-link">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/sigitKurnia1" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="social-link">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Terminal-style accent block -->
+        <div class="terminal reveal" aria-hidden="false">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--red"></span>
+            <span class="terminal__dot terminal__dot--amber"></span>
+            <span class="terminal__dot terminal__dot--green"></span>
+            <span class="terminal__title mono">sigit@portfolio: ~</span>
+          </div>
+          <div class="terminal__body mono">
+            <p><span class="terminal__prompt">sigit@portfolio:~$</span> whoami</p>
+            <p class="terminal__out">→ Web Developer focused on the Laravel/PHP ecosystem</p>
+            <p><span class="terminal__prompt">sigit@portfolio:~$</span> status</p>
+            <p class="terminal__out">→ Open to work · based in Riau, Indonesia</p>
+            <p><span class="terminal__prompt">sigit@portfolio:~$</span> <span class="terminal__cursor">█</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- BY THE NUMBERS                                                -->
+    <!-- ============================================================= -->
+    <section class="stats" id="stats" aria-label="Key metrics">
+      <div class="container">
+        <p class="section__kicker mono reveal">// by the numbers</p>
+        <div class="stats__grid">
+          <div class="stat reveal">
+            <span class="stat__value mono">3.88<span class="stat__unit">/4.00</span></span>
+            <span class="stat__label">GPA (Cumlaude)</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value mono">830</span>
+            <span class="stat__label">TOEIC Score</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value mono">#1</span>
+            <span class="stat__label">Top Graduate, Informatics Engineering</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value mono">BNSP</span>
+            <span class="stat__label">Certified Junior Web Programmer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- ABOUT                                                         -->
+    <!-- ============================================================= -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 01 — about</p>
+        <h2 class="section__title reveal" id="about-title">About</h2>
+        <p class="about__text reveal">
+          I'm a web developer focused on the Laravel and PHP ecosystem. I graduated with distinction
+          (GPA 3.88) from Bengkalis State Polytechnic, where I was recognized as the top student in the
+          Informatics Engineering department. I enjoy building impactful software with strong
+          problem-solving and clean, maintainable code. Beyond the web, I've also explored Android
+          development through Google's Bangkit Academy. I'm now looking to grow within a professional
+          engineering team — on-site in Riau or remotely.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SKILLS                                                        -->
+    <!-- ============================================================= -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 02 — skills</p>
+        <h2 class="section__title reveal" id="skills-title">Skills</h2>
+
+        <div class="skills__grid">
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title mono">Core Web</h3>
+            <ul class="chips">
+              <li class="chip">Laravel</li>
+              <li class="chip">PHP</li>
+              <li class="chip">MySQL</li>
+              <li class="chip">JavaScript</li>
+              <li class="chip">HTML5</li>
+              <li class="chip">CSS3</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title mono">Also Experienced</h3>
+            <ul class="chips">
+              <li class="chip">Java</li>
+              <li class="chip">Python</li>
+              <li class="chip">Git</li>
+              <li class="chip">Android (Kotlin)</li>
+              <li class="chip">Jetpack Compose</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title mono">Foundations</h3>
+            <ul class="chips">
+              <li class="chip">REST APIs</li>
+              <li class="chip">Database Design</li>
+              <li class="chip">Responsive UI</li>
+              <li class="chip">Problem Solving</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- PROJECTS                                                      -->
+    <!-- ============================================================= -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 03 — projects</p>
+        <h2 class="section__title reveal" id="projects-title">Projects</h2>
+
+        <div class="projects__grid">
+
+          <!-- DUPLICATE THIS CARD TO ADD MORE PROJECTS -->
+          <article class="card reveal">
+            <div class="card__top">
+              <span class="card__badge mono">Web App</span>
+              <span class="card__org mono">Internship @ Garuda Cyber Indonesia</span>
+            </div>
+            <h3 class="card__title">Web Engineering & Software Design</h3>
+            <p class="card__desc">
+              Web engineering &amp; software design project built during my internship.
+              <!-- TODO: describe real features & impact, e.g. modules built, number of users -->
+            </p>
+            <ul class="chips chips--sm">
+              <!-- TODO: confirm stack -->
+              <li class="chip">Laravel</li>
+              <li class="chip">PHP</li>
+              <li class="chip">MySQL</li>
+            </ul>
+            <div class="card__links">
+              <!-- TODO: replace # with the live demo URL -->
+              <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> Live Demo
+              </a>
+              <!-- TODO: replace # with the GitHub repo URL -->
+              <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">⌥</span> GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- DUPLICATE THIS CARD TO ADD MORE PROJECTS -->
+          <article class="card reveal">
+            <div class="card__top">
+              <span class="card__badge mono">Game</span>
+              <span class="card__org mono">GEMASTIK XV 2022</span>
+            </div>
+            <h3 class="card__title">Game Application</h3>
+            <p class="card__desc">
+              A game application developed for the national GEMASTIK competition
+              (Game Application Development category).
+              <!-- TODO: summarize the game concept & your role -->
+            </p>
+            <ul class="chips chips--sm">
+              <!-- TODO: confirm engine / language, then add chips here e.g. <li class="chip">Unity</li> -->
+            </ul>
+            <div class="card__links">
+              <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> Live Demo
+              </a>
+              <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">⌥</span> GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- DUPLICATE THIS CARD TO ADD MORE PROJECTS -->
+          <article class="card reveal">
+            <div class="card__top">
+              <span class="card__badge mono">Android</span>
+              <span class="card__org mono">Bangkit Academy Capstone</span>
+            </div>
+            <h3 class="card__title">Android App</h3>
+            <p class="card__desc">
+              An Android application built with Kotlin &amp; Jetpack Compose during Bangkit Academy.
+              <!-- TODO: summarize the problem it solves -->
+            </p>
+            <ul class="chips chips--sm">
+              <li class="chip">Kotlin</li>
+              <li class="chip">Jetpack Compose</li>
+              <li class="chip">Android Studio</li>
+            </ul>
+            <div class="card__links">
+              <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span> Live Demo
+              </a>
+              <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">⌥</span> GitHub
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- EXPERIENCE                                                    -->
+    <!-- ============================================================= -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 04 — experience</p>
+        <h2 class="section__title reveal" id="experience-title">Experience</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Teaching Assistant (Lecturer Assistant)</h3>
+              <p class="timeline__meta mono">Politeknik Negeri Bengkalis · Aug 2025–Present · Hybrid</p>
+              <ul class="timeline__bullets">
+                <li>Assist in teaching and mentoring students in programming and software engineering coursework.</li>
+                <!-- TODO: add measurable impact, e.g. number of students / courses supported -->
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience"
-              >Experience</a
-            >
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Programmer (Internship)</h3>
+              <p class="timeline__meta mono">PT. Garuda Cyber Indonesia · Feb 2024–Jun 2024 · Pekanbaru · On-site</p>
+              <ul class="timeline__bullets">
+                <li>Worked on web engineering and software design, building and maintaining web application features.</li>
+                <!-- TODO: add technology (Laravel/PHP?), features built, measurable results -->
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education"
-              >Education</a
-            >
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Bangkit Academy Graduate</h3>
+              <p class="timeline__meta mono">Led by Google, Tokopedia, Gojek &amp; Traveloka · Feb 2023–Jul 2023 · Remote</p>
+              <ul class="timeline__bullets">
+                <li>Completed an intensive program in mobile development (Kotlin, Android Studio) with a team-based capstone project.</li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Participant — GEMASTIK XV 2022</h3>
+              <p class="timeline__meta mono">Game Application Development · Oct–Nov 2022</p>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests"
-              >Interests</a
-            >
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Participant — IISMAVO 2022</h3>
+              <p class="timeline__meta mono">Ministry of Education, Higher Education · Apr 2022</p>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- EDUCATION                                                     -->
+    <!-- ============================================================= -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 05 — education</p>
+        <h2 class="section__title reveal" id="education-title">Education</h2>
+
+        <div class="edu reveal">
+          <h3 class="edu__school">Politeknik Negeri Bengkalis</h3>
+          <p class="edu__meta mono">Diploma, Computer Software Engineering · Aug 2020–Oct 2024 · GPA 3.88</p>
+          <p class="edu__activities">
+            Activities: Head of Kominfo, Pramuka Student Unit · Lecturer Assistant · Research &amp; Community Service.
+          </p>
+        </div>
+
+        <div class="edu reveal">
+          <h3 class="edu__school">MAN 1 Plus Keterampilan Bengkalis</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- CERTIFICATIONS & AWARDS                                       -->
+    <!-- ============================================================= -->
+    <section class="section" id="certs" aria-labelledby="certs-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 06 — certifications &amp; awards</p>
+        <h2 class="section__title reveal" id="certs-title">Certifications &amp; Awards</h2>
+
+        <ul class="awards">
+          <li class="award reveal">
+            <span class="award__icon mono">✓</span>
+            <div>
+              <p class="award__title">Junior Web Programmer — BNSP</p>
+              <p class="award__meta mono">National Professional Certification Agency · Aug 2024–Aug 2027 · HTML5, CSS, +3 skills</p>
+            </div>
+          </li>
+          <li class="award reveal">
+            <span class="award__icon mono">✓</span>
+            <div>
+              <p class="award__title">Building Android Apps with Jetpack Compose</p>
+              <p class="award__meta mono">Dicoding Indonesia · May 2023–May 2026</p>
+            </div>
+          </li>
+          <li class="award reveal">
+            <span class="award__icon" aria-hidden="true">🏆</span>
+            <div>
+              <p class="award__title">Cumlaude Student Award</p>
+              <p class="award__meta mono">Politeknik Negeri Bengkalis · Oct 2024</p>
+            </div>
+          </li>
+          <li class="award reveal">
+            <span class="award__icon" aria-hidden="true">🏆</span>
+            <div>
+              <p class="award__title">Top Graduate, Informatics Engineering Department</p>
+              <p class="award__meta mono">Politeknik Negeri Bengkalis · Oct 2024</p>
+            </div>
+          </li>
+          <li class="award reveal">
+            <span class="award__icon mono">★</span>
+            <div>
+              <p class="award__title">TOEIC Score: 830</p>
+              <p class="award__meta mono">2022</p>
+            </div>
           </li>
         </ul>
       </div>
-    </nav>
-    <!-- Page Content-->
-    <div class="container-fluid p-0">
-      <!-- About-->
-      <section class="resume-section" id="about">
-        <div class="resume-section-content">
-          <h1 class="mb-0">
-            Sigit
-            <span class="text-primary">Kurniawan</span>
-          </h1>
-          <div class="subheading mb-5">
-            Bengkalis - Riau, Indonesia - +62 813 4970 4315 -
-            <a href="mailto:name@email.com">sigitkurniawanmtsn@gmail.com</a>
-          </div>
-          <p class="lead mb-5">
-            I am a seventh-semester software engineering student at Bengkalis
-            State Polythecnic. I have developed excellent software development
-            skill through my degree, and I supplement this skill through my
-            competency in various small project and other programming languages.
-            My determination and dedication is highlighted by my achievment in
-            making an application and got top 3 best team in my campus. I am now
-            looking to further develop and use my skills in a year in industry
-            placement, specifically in software development.
-          </p>
-          <div class="social-icons">
-            <a
-              class="social-icon"
-              href="https://www.linkedin.com/in/sigit-kurniawan-a85108272/"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a class="social-icon" href="https://github.com/sigitKurnia1"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a
-              class="social-icon"
-              href="https://www.instagram.com/sigit_kurniawan_9/"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- CONTACT                                                       -->
+    <!-- ============================================================= -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="section__kicker mono reveal">// 07 — contact</p>
+        <h2 class="section__title reveal" id="contact-title">Let's build something</h2>
+        <p class="contact__lead reveal">
+          Open to junior web developer roles and freelance projects. Let's build something.
+        </p>
+
+        <div class="contact__links reveal">
+          <a class="btn btn--primary" href="mailto:sigitkurniawan1052@gmail.com">Email Me</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/sigit-kurniawan-a85108272/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://github.com/sigitKurnia1" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-      </section>
-      <hr class="m-0" />
-      <!-- Experience-->
-      <section class="resume-section" id="experience">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Experience</h2>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka
-              </h3>
-              <div class="subheading mb-3">Alumni</div>
-              <p>
-                During participating in this activity, I developed soft skills
-                in adapting to change, leading a team in a project, and managing
-                time effectively. Not only that, this activity also helped
-                sharpen my hard skills so that I could build a mobile
-                application using the Kotlin programming language.
-              </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">February 2023 - June 2023</span>
-            </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                Participant in GEMASTIK XV 2022 - Pengembangan Aplikasi
-                Permainan
-              </h3>
-              <div class="subheading mb-3">GEMASTIK XV</div>
-              <p>
-                While participating in this activity, I was able to lead a team
-                in developing a simple game application using the Unity game
-                engine. Not only that, during my time as the team leader, I
-                learned many things such as how to effectively manage team
-                members, solve problems quickly, and implement good
-                communication among team members.
-              </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">November 2022</span>
-            </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Participant In IISMAVO 2022</h3>
-              <div class="subheading mb-3">
-                Direktorat Jenderal Pendidikan Tinggi, Riset dan Teknologi
-                Kemdikbudristek
-              </div>
-              <p>
-                During participating in this activity, I learned many things
-                about communicating in English. Not only that, I also obtained a
-                TOEIC (Test of English for International Communication) EPT
-                (English Proficiency Test) certificate with a quite good score
-                of 840.
-              </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">April 2022</span>
-            </div>
-          </div>
-          <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Graphic Design Competition</h3>
-              <div class="subheading mb-3">
-                Himpunan Mahasiswa Teknik Informatika (HMTI)
-              </div>
-              <p>
-                In participating in this activity, I learned many things about
-                graphic design, such as how to create a design that is very
-                appealing even in its simplicity, the use of choreography or the
-                use of the right typography, and how to effectively convey a
-                message through the design that has been created.
-              </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">November 2022</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <hr class="m-0" />
-      <!-- Education-->
-      <section class="resume-section" id="education">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Education</h2>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Politeknik Negeri Bengkalis</h3>
-              <div class="subheading mb-3">
-                Diploma of Education, Computer Software Engineering
-              </div>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">August 2020 - Present</span>
-            </div>
-          </div>
-          <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">MAN 1 Plus Keterampilan Bengkalis</h3>
-              <div class="subheading mb-3">Jurusan IPA</div>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">Month Year - Month Year</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <hr class="m-0" />
-      <!-- Skills-->
-      <section class="resume-section" id="skills">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Skills</h2>
-          <div class="subheading mb-3">Programming Languages & Tools</div>
-          <ul class="list-inline dev-icons">
-            <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-            <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-            <li class="list-inline-item"><i class="fab fa-laravel"></i></li>
-            <li class="list-inline-item"><i class="fab fa-python"></i></li>
-            <li class="list-inline-item"><i class="fab fa-java"></i></li>
-            <li class="list-inline-item"><i class="fab fa-php"></i></li>
-            <li class="list-inline-item"><i class="fab fa-android"></i></li>
-            <li class="list-inline-item"><i class="fab fa-bootstrap"></i></li>
-            <li class="list-inline-item"><i class="fab fa-unity"></i></li>
-            <li class="list-inline-item"><i class="fab fa-figma"></i></li>
-          </ul>
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <span class="fa-li"><i class="fas fa-check"></i></span>
-              Website, Mobile, & Responsive Design
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check"></i></span>
-              Testing & Debugging
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check"></i></span>
-              Cross Functional Teams
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check"></i></span>
-              Agile Development & Kanban
-            </li>
-          </ul>
-        </div>
-      </section>
-      <hr class="m-0" />
-      <!-- Interests-->
-      <section class="resume-section" id="interests">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Interests</h2>
-          <p>
-            Apart from being a software engineer, I greatly enjoy my time
-            outdoors. During holidays, I like to spend time gathering with
-            friends, going on camping trips to a place I like, and engaging in
-            light physical activities.
-          </p>
-          <p class="mb-0">
-            When indoors, I prefer to watch movies or videos to entertain myself
-            after tiring activities. Not only that, I also occasionally browse
-            the internet to seek inspiration.
-          </p>
-        </div>
-      </section>
-      <hr class="m-0" />
-      <!-- Awards-->
-      <section class="resume-section" id="awards">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Awards & Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Belajar Dasar UX Design
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Belajar Membuat Aplikasi Android dengan Jetpack Compose
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Belajar Pengembangan Aplikasi Android Intermediate
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Belajar Prinsip Pemrograman SOLID
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Belajar Fundamental Aplikasi Android
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Belajar Membuat Aplikasi Android untuk Pemula
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Pengenalan ke Logika Pemrograman (Programming Logic 101)
-            </li>
-          </ul>
-        </div>
-      </section>
+
+        <p class="contact__email mono reveal">sigitkurniawan1052@gmail.com</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================= -->
+  <!-- FOOTER                                                         -->
+  <!-- ============================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="mono">© 2026 Sigit Kurniawan. Built with HTML, CSS &amp; JavaScript.</p>
+      <a href="#top" class="footer__top mono" aria-label="Back to top">back to top ↑</a>
     </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-  </body>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
 </html>
